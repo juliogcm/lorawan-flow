@@ -1,0 +1,12 @@
+CREATE TABLE fluxos(
+	gateway VARCHAR(16),
+	device_addr VARCHAR(8),
+	port	VARCHAR(4),
+	type_message	VARCHAR(20),
+	time_stamp	INT,
+	device	VARCHAR(16) NOT NULL,
+	application	VARCHAR(16) NOT NULL,
+	message_quantity INT NOT NULL CHECK(message_quantity > 0),
+	size_bytes	BIGINT NOT NULL	CHECK(size_bytes > 0),
+	PRIMARY KEY(gateway,device_addr,port,type_message,time_stamp,device)
+);
